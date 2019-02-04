@@ -31,7 +31,7 @@ const screenModes = [
 ]
     
 const floorColor = 130
-const ceilingColor = 50
+const ceilingColor = 65
 
 const stripWidth = 1;
 
@@ -47,8 +47,8 @@ let player = {
 	dir : 0,		// the direction that the player is turning, either -1 for left or 1 for right.
 	rot : 0,		// the current angle of rotation
 	speed : 0,		// is the playing moving forward (speed = 1) or backwards (speed = -1).
-	moveSpeed : 0.18,	// how far (in map units) does the player move each step/update
-	rotSpeed : 6 * Math.PI / 180	// how much does the player rotate each step/update (in radians)
+	moveSpeed : 0.1,	// how far (in map units) does the player move each step/update
+	rotSpeed : 3 * Math.PI / 180	// how much does the player rotate each step/update (in radians)
 }
 
 let mapWidth = worldMap[0].length;
@@ -326,7 +326,7 @@ function drawMinimap(){
     
     strokeWeight(2)
     stroke(color("red"));
-    line(player.x * miniMapScale, player.y * miniMapScale, (player.x + Math.cos(player.rot) * 4) * miniMapScale, (player.y + Math.sin(player.rot) * 4) * miniMapScale);
+    line(player.x * miniMapScale, player.y * miniMapScale, (player.x + Math.cos(player.rot) * 2) * miniMapScale, (player.y + Math.sin(player.rot) * 2) * miniMapScale);
 }
     
 function keyPressed() {
